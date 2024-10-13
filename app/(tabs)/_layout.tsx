@@ -13,6 +13,7 @@ export default function TabsLayout() {
           tabBarIcon: ({ color, size }) => (
             <MaterialIcons name="attach-money" color={color} size={size} />
           ),
+          headerShown:false
         }}
       />
       <Tabs.Screen
