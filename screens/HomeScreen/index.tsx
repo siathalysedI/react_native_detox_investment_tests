@@ -1,9 +1,9 @@
-// app/tabs/index.tsx
+// screens/HomeScreen.tsx
 import React from 'react';
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
-import InvestmentCard from '../../components/InvestmentCard';
+import InvestmentCard from '../components/InvestmentCard';
 
-export default function HomeScreen() {
+const HomeScreen: React.FC = () => {
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <Text style={styles.balance}>R$ 43,62</Text>
@@ -14,7 +14,7 @@ export default function HomeScreen() {
       <InvestmentCard code="MCHY11" earnings="Rendimento: NÃO INFORMADO" amount="--" date="NÃO INFORMADO" />
     </ScrollView>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -30,3 +30,5 @@ const styles = StyleSheet.create({
     marginVertical: 16,
   },
 });
+
+export default HomeScreen;

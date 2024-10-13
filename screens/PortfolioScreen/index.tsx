@@ -1,14 +1,14 @@
-// app/tabs/explore.tsx
+// screens/PortfolioScreen.tsx
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-export default function PortfolioScreen() {
+const PortfolioScreen: React.FC = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Portfólio em desenvolvimento...</Text>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -22,3 +22,5 @@ const styles = StyleSheet.create({
     fontSize: 18,
   },
 });
+
+export default PortfolioScreen;
