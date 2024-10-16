@@ -1,5 +1,5 @@
-import React from 'react';
-import { View, Text, StyleSheet, Button } from 'react-native';
+import React from "react";
+import { View, Text, StyleSheet, Button, Alert, Platform } from "react-native";
 
 interface InvestmentCardProps {
   code: string;
@@ -8,7 +8,12 @@ interface InvestmentCardProps {
   date: string;
 }
 
-const InvestmentCard: React.FC<InvestmentCardProps> = ({ code, earnings, amount, date }) => {
+const InvestmentCard: React.FC<InvestmentCardProps> = ({
+  code,
+  earnings,
+  amount,
+  date,
+}) => {
   return (
     <View style={styles.card}>
       <Text style={styles.title}>{code}</Text>
@@ -17,37 +22,49 @@ const InvestmentCard: React.FC<InvestmentCardProps> = ({ code, earnings, amount,
         <Text style={styles.amount}>{amount}</Text>
         <Button title={date} color="#F9A825" onPress={() => {}} />
       </View>
-      <Button title="Mais detalhes" onPress={() => {}} color="gray" />
+      <Button
+        title="Mais detalhes"
+        onPress={() => {
+          const alertTitle = "Hello World";
+          const alertText = "Cliquei no botão";
+          if (Platform.OS === "web") {
+            alert(alertText);
+          }
+
+          Alert.alert(alertTitle, alertText);
+        }}
+        color="gray"
+      />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: 'white',
+    backgroundColor: "white",
     padding: 16,
     borderRadius: 8,
     marginVertical: 8,
   },
   title: {
     fontSize: 16,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
   earnings: {
     fontSize: 14,
-    color: 'gray',
+    color: "gray",
     marginVertical: 4,
   },
   row: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
     marginVertical: 8,
   },
   amount: {
     fontSize: 18,
-    fontWeight: 'bold',
-    color: '#F9A825',
+    fontWeight: "bold",
+    color: "#F9A825",
   },
 });
 
