@@ -1,4 +1,4 @@
 // app/tabs/index.tsx
-import HomeScreen from '@/screens/HomeScreen';
+import EarningScreen from '@/screens/EarningScreen';
 
-export default HomeScreen
+export default EarningScreen

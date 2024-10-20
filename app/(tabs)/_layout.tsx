@@ -9,7 +9,7 @@ export default function TabsLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          tabBarLabel: 'Proventos',
+          tabBarLabel: 'Earnings',
           tabBarIcon: ({ color, size }) => (
             <MaterialIcons name="attach-money" color={color} size={size} />
           ),
@@ -17,9 +17,9 @@ export default function TabsLayout() {
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="wallet"
         options={{
-          tabBarLabel: 'Carteira',
+          tabBarLabel: 'Wallet',
           tabBarIcon: ({ color, size }) => (
             <MaterialIcons name="account-balance-wallet" color={color} size={size} />
           ),
