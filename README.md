@@ -1,6 +1,6 @@
 # **Projeto de Prática de Testes E2E com Detox em React Native**
 
-Este repositório foi criado para demonstrar como configurar e executar testes end-to-end (E2E) em um aplicativo **React Native** utilizando o **Detox**. Ele inclui um exemplo prático de cenário de teste que cobre um fluxo importante da aplicação, focado em exibir informações de investimentos em diferentes telas.
+Este repositório foi criado para demonstrar como configurar e executar testes end-to-end (E2E) em um aplicativo **React Native** utilizando o **Detox**. Ele inclui um exemplo prático de cenário de teste que cobre um fluxo importante da aplicação, focado em exibir informações de investimentos em diferentes telas. Durante a aula, os alunos deverão corrigir um erro proposital introduzido no teste.
 
 ---
 
@@ -18,7 +18,8 @@ Testes end-to-end verificam o funcionamento completo de um aplicativo, do iníci
 
 1. Demonstrar como configurar o Detox em um aplicativo React Native.
 2. Ensinar práticas de escrita e execução de testes E2E.
-3. Validar fluxos principais do aplicativo, garantindo a experiência do usuário.
+3. Identificar e corrigir erros introduzidos nos testes, praticando debugging.
+4. Validar fluxos principais do aplicativo, garantindo a experiência do usuário.
 
 ---
 
@@ -27,6 +28,59 @@ Testes end-to-end verificam o funcionamento completo de um aplicativo, do iníci
 - **React Native**: Framework para desenvolvimento mobile.
 - **Detox**: Framework de testes E2E para aplicativos React Native.
 - **Jest**: Utilizado como executor de testes.
+
+---
+
+## 📝 **Atividades da Aula**
+
+A aula é dividida em 3 atividades práticas que devem ser realizadas seguindo os passos abaixo:
+
+### **Atividade 1: Configuração do Ambiente**
+1. Instale as dependências do projeto:
+   ```bash
+   npm install
+   ```
+2. Compile o app para a plataforma desejada utilizando os comandos customizados:
+   - Para iOS:
+     ```bash
+     npm run detox:build:ios
+     ```
+   - Para Android:
+     ```bash
+     npm run detox:build:android
+     ```
+
+---
+
+### **Atividade 2: Execução do Teste E2E**
+1. Execute o teste E2E no Detox utilizando os comandos customizados:
+   - Para iOS:
+     ```bash
+     npm run detox:test:ios
+     ```
+   - Para Android:
+     ```bash
+     npm run detox:test:android
+     ```
+
+2. Observe que o teste para a aba **Wallet** falha de propósito.
+
+---
+
+### **Atividade 3: Debugging e Correção**
+1. Abra o arquivo de teste localizado em `e2e/tests/earning_wallet.test.js`.
+2. Analise o seguinte código com erro:
+   ```javascript
+   it('should display MXRF11 on Earnings screen and in Wallet', async () => {
+     await element(by.text('Earnings')).tap();
+     await expect(element(by.text('MXRF11'))).toBeVisible();
+
+     await element(by.text('Wallet')).tap();
+     await expect(element(by.text('MXRF10'))).toBeVisible();
+   });
+   ```
+3. Corrija o código para que ele valide corretamente a presença de "MXRF11" na aba Wallet.
+4. Reexecute o teste utilizando os comandos customizados para confirmar que o problema foi solucionado.
 
 ---
 
@@ -80,29 +134,6 @@ xcodebuild -version
    brew install applesimutils
    ```
 
-### Configuração Detox para iOS
-
-Edite o arquivo `.detoxrc.js`:
-```javascript
-module.exports = {
-  configurations: {
-    "ios.sim.debug": {
-      type: "ios.simulator",
-      binaryPath: "ios/build/Build/Products/Debug-iphonesimulator/YourApp.app",
-      build: "xcodebuild -workspace ios/YourApp.xcworkspace -scheme YourApp -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build",
-      device: {
-        type: "iPhone 15"
-      }
-    }
-  }
-};
-```
-
-Liste simuladores disponíveis:
-```bash
-xcrun simctl list devices
-```
-
 ---
 
 ## 🤖 **Configuração Android**
@@ -122,53 +153,6 @@ adb --version
 1. Abra o Android Studio.
 2. Vá para **File > Project Structure > SDK Location**.
 3. Selecione **Java 17** como versão do JDK.
-
-### Configuração Detox para Android
-
-Edite o arquivo `.detoxrc.js`:
-```javascript
-module.exports = {
-  configurations: {
-    "android.emu.debug": {
-      type: "android.emulator",
-      binaryPath: "android/app/build/outputs/apk/debug/app-debug.apk",
-      build: "cd android && ./gradlew assembleDebug assembleAndroidTest -DtestBuildType=debug && cd ..",
-      device: {
-        avdName: "Pixel_3a_API_30"
-      }
-    }
-  }
-};
-```
-
----
-
-## 🚀 **Executando os Testes**
-
-### Passos Comuns
-
-1. Instale as dependências:
-   ```bash
-   npm install
-   ```
-2. Compile o app:
-   - Para iOS:
-     ```bash
-     detox build -c ios.sim.debug
-     ```
-   - Para Android:
-     ```bash
-     detox build -c android.emu.debug
-     ```
-3. Execute os testes:
-   - Para iOS:
-     ```bash
-     detox test -c ios.sim.debug
-     ```
-   - Para Android:
-     ```bash
-     detox test -c android.emu.debug
-     ```
 
 ---
 
