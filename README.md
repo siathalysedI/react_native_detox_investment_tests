@@ -31,6 +31,85 @@ Testes end-to-end verificam o funcionamento completo de um aplicativo, do iníci
 
 ---
 
+## 📋 **Dependências Necessárias (Comum)**
+
+### **Java 17**
+
+Instale o Java Development Kit (JDK) versão 17:
+
+- Links de download: [Windows](https://download.java.net/java/GA/jdk17/0d1cfde4252546c6931946de8db48ee2/9/GPL/openjdk-17.0.2_windows-x64_bin.zip), [Mac AArch64](https://download.java.net/java/GA/jdk17/0d1cfde4252546c6931946de8db48ee2/9/GPL/openjdk-17.0.2_macos-aarch64_bin.tar.gz), [Mac x64](https://download.java.net/java/GA/jdk17/0d1cfde4252546c6931946de8db48ee2/9/GPL/openjdk-17.0.2_macos-x64_bin.tar.gz), [Linux AArch64](https://download.java.net/java/GA/jdk17/0d1cfde4252546c6931946de8db48ee2/9/GPL/openjdk-17.0.2_linux-aarch64_bin.tar.gz), [Linux x64](https://download.java.net/java/GA/jdk17/0d1cfde4252546c6931946de8db48ee2/9/GPL/openjdk-17.0.2_linux-x64_bin.tar.gz).
+
+Verifique a instalação:
+```bash
+java -version
+```
+
+### **Node.js**
+
+Requer **Node.js** versão 18 ou superior: [Baixe aqui](https://nodejs.org/).
+
+---
+
+## 🖥 **Configuração iOS**
+
+### Pré-requisitos
+
+1. Instale o **Xcode**: [Baixe aqui](https://developer.apple.com/xcode/).
+2. Configure o simulador no Xcode (recomenda-se o iPhone 13 ou superior com iOS 15.5+).
+
+Verifique se o `xcodebuild` está funcionando:
+```bash
+xcodebuild -version
+```
+
+### Instalando Dependências iOS
+
+1. Instale o `applesimutils`:
+   ```bash
+   brew tap wix/brew
+   brew install applesimutils
+   ```
+
+---
+
+## 🤖 **Configuração Android**
+
+### Pré-requisitos
+
+1. Instale o **Android Studio**: [Baixe aqui](https://developer.android.com/studio).
+2. Configure um emulador (exemplo: Pixel 3a com API Level 30+).
+
+Verifique se o `adb` está funcionando:
+```bash
+adb --version
+```
+
+### Seleção do Java 17 no Android Studio
+
+1. Abra o Android Studio.
+2. Vá para **File > Project Structure > SDK Location**.
+3. Selecione **Java 17** como versão do JDK.
+
+---
+
+## 📂 **Estrutura do Projeto**
+
+```
+react_native_detox_investment_tests/
+├── e2e/
+│   ├── tests/
+│   │   └── earning_wallet.test.js
+│   └── jest.config.js
+├── src/
+├── ios/
+├── android/
+├── package.json
+└── README.md
+```
+
+---
+
+
 ## 📝 **Atividades da Aula**
 
 A aula é dividida em 3 atividades práticas que devem ser realizadas seguindo os passos abaixo:
@@ -81,88 +160,6 @@ A aula é dividida em 3 atividades práticas que devem ser realizadas seguindo o
    ```
 3. Corrija o código para que ele valide corretamente a presença de "MXRF11" na aba Wallet.
 4. Reexecute o teste utilizando os comandos customizados para confirmar que o problema foi solucionado.
-
----
-
-## 📋 **Dependências Necessárias (Comum)**
-
-### **Java 17**
-
-Instale o Java Development Kit (JDK) versão 17:
-
-- Links de download: [Windows](https://download.java.net/java/GA/jdk17/0d1cfde4252546c6931946de8db48ee2/9/GPL/openjdk-17.0.2_windows-x64_bin.zip), [Mac AArch64](https://download.java.net/java/GA/jdk17/0d1cfde4252546c6931946de8db48ee2/9/GPL/openjdk-17.0.2_macos-aarch64_bin.tar.gz), [Mac x64](https://download.java.net/java/GA/jdk17/0d1cfde4252546c6931946de8db48ee2/9/GPL/openjdk-17.0.2_macos-x64_bin.tar.gz), [Linux AArch64](https://download.java.net/java/GA/jdk17/0d1cfde4252546c6931946de8db48ee2/9/GPL/openjdk-17.0.2_linux-aarch64_bin.tar.gz), [Linux x64](https://download.java.net/java/GA/jdk17/0d1cfde4252546c6931946de8db48ee2/9/GPL/openjdk-17.0.2_linux-x64_bin.tar.gz).
-
-Verifique a instalação:
-```bash
-java -version
-```
-
-### **Node.js**
-
-Requer **Node.js** versão 18 ou superior: [Baixe aqui](https://nodejs.org/).
-
----
-
-## 🖥 **Configuração iOS**
-
-### Pré-requisitos
-
-1. Instale o **Xcode**: [Baixe aqui](https://developer.apple.com/xcode/).
-2. Configure o simulador no Xcode (recomenda-se o iPhone 13 ou superior com iOS 15.5+).
-
-Verifique se o `xcodebuild` está funcionando:
-```bash
-xcodebuild -version
-```
-
-### Instalando Dependências iOS
-
-1. Instale o Detox:
-   ```bash
-   npm install -g detox-cli
-   ```
-2. Instale o `applesimutils`:
-   ```bash
-   brew tap wix/brew
-   brew install applesimutils
-   ```
-
----
-
-## 🤖 **Configuração Android**
-
-### Pré-requisitos
-
-1. Instale o **Android Studio**: [Baixe aqui](https://developer.android.com/studio).
-2. Configure um emulador (exemplo: Pixel 3a com API Level 30+).
-
-Verifique se o `adb` está funcionando:
-```bash
-adb --version
-```
-
-### Seleção do Java 17 no Android Studio
-
-1. Abra o Android Studio.
-2. Vá para **File > Project Structure > SDK Location**.
-3. Selecione **Java 17** como versão do JDK.
-
----
-
-## 📂 **Estrutura do Projeto**
-
-```
-react_native_detox_investment_tests/
-├── e2e/
-│   ├── tests/
-│   │   └── earning_wallet.test.js
-│   └── jest.config.js
-├── src/
-├── ios/
-├── android/
-├── package.json
-└── README.md
-```
 
 ---
 
