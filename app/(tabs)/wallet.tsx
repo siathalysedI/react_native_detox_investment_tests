@@ -1,5 +1,5 @@
 // app/tabs/explore.tsx
-import WalletScreen from '@/screens/WalletScreen';
+import WalletScreen from '@/src/screens/WalletScreen';
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 

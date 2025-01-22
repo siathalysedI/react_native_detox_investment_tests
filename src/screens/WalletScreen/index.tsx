@@ -19,7 +19,6 @@ const WalletScreen: React.FC = () => {
     <View style={styles.container}>
       <Text style={styles.title}>My Wallet</Text>
 
-      {/* Wallet assets list */}
       <FlatList
         data={walletAssetsItems}
         keyExtractor={(item) => item.code}
@@ -32,8 +31,7 @@ const WalletScreen: React.FC = () => {
         contentContainerStyle={styles.walletList}
       />
 
-      {/* Add investments button */}
-      <TouchableOpacity style={styles.addButton} onPress={() => { /* Add your action here */ }}>
+      <TouchableOpacity style={styles.addButton}>
         <Text style={styles.addButtonText}>Add investments</Text>
       </TouchableOpacity>
     </View>

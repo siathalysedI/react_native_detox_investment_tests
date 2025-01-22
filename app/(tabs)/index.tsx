@@ -1,4 +1,4 @@
 // app/tabs/index.tsx
-import EarningScreen from '@/screens/EarningScreen';
+import EarningScreen from '@/src/screens/EarningScreen';
 
 export default EarningScreen
