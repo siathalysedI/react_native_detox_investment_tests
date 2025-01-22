@@ -90,6 +90,20 @@ Verifique se o `xcodebuild` está funcionando:
 xcodebuild -version
 ```
 
+### **Instale o Detox globalmente**
+   ```bash
+   npm install -g detox-cli
+   ```
+
+### **Configure o ambiente de simulação**
+   - **iOS**: Certifique-se de que o Xcode está instalado.
+   - **Android**: Configure o Android Studio e os emuladores.
+
+**Selecione o Java 17 no Android Studio**
+   - Abra o Android Studio.
+   - Acesse as configurações do projeto (File > Project Structure > SDK Location).
+   - Certifique-se de que o **Java 17** está selecionado como versão do JDK.
+
 ---
 
 ## 🔌 **Extensões Recomendadas para VS Code**
@@ -189,6 +203,22 @@ describe('Earnings and Wallet Screen Tests', () => {
 ```
 
 ---
+
+### 🚒 Pré-requisitos
+
+1. Instale o Detox globalmente:
+   ```bash
+   npm install -g detox-cli
+   ```
+
+2. Configure o ambiente de simulação:
+   - **iOS**: Certifique-se de que o Xcode está instalado.
+   - **Android**: Configure o Android Studio e os emuladores.
+
+3. **Selecione o Java 17 no Android Studio**:
+   - Abra o Android Studio.
+   - Acesse as configurações do projeto (File > Project Structure > SDK Location).
+   - Certifique-se de que o **Java 17** está selecionado como versão do JDK.
 
 ## 🚀 **Executando os Testes**
 
