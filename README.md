@@ -22,6 +22,76 @@ Testes end-to-end verificam o funcionamento completo de um aplicativo, do iníci
 
 ---
 
+## 📋 **Dependências Necessárias**
+
+Para executar este projeto, é necessário instalar as dependências abaixo:
+
+### **Java 17**
+
+O projeto requer o Java Development Kit (JDK) versão 17. Use o instalador adequado ao seu sistema operacional:
+
+- **Windows 64-bit**: [jdk-17.0.2_windows-x64_bin.zip](https://download.java.net/java/GA/jdk17/0d1cfde4252546c6931946de8db48ee2/9/GPL/openjdk-17.0.2_windows-x64_bin.zip)
+- **Mac/AArch64 64-bit**: [jdk-17.0.2_macos-aarch64_bin.tar.gz](https://download.java.net/java/GA/jdk17/0d1cfde4252546c6931946de8db48ee2/9/GPL/openjdk-17.0.2_macos-aarch64_bin.tar.gz)
+- **Mac/x64 64-bit**: [jdk-17.0.2_macos-x64_bin.tar.gz](https://download.java.net/java/GA/jdk17/0d1cfde4252546c6931946de8db48ee2/9/GPL/openjdk-17.0.2_macos-x64_bin.tar.gz)
+- **Linux/AArch64 64-bit**: [jdk-17.0.2_linux-aarch64_bin.tar.gz](https://download.java.net/java/GA/jdk17/0d1cfde4252546c6931946de8db48ee2/9/GPL/openjdk-17.0.2_linux-aarch64_bin.tar.gz)
+- **Linux/x64 64-bit**: [jdk-17.0.2_linux-x64_bin.tar.gz](https://download.java.net/java/GA/jdk17/0d1cfde4252546c6931946de8db48ee2/9/GPL/openjdk-17.0.2_linux-x64_bin.tar.gz)
+
+Após instalar o JDK, verifique se a instalação foi bem-sucedida executando:
+```bash
+java -version
+```
+Deve retornar algo como:
+```
+java version "17.0.2" 2022-01-18 LTS
+Java(TM) SE Runtime Environment (build 17.0.2+8-LTS-86)
+Java HotSpot(TM) 64-Bit Server VM (build 17.0.2+8-LTS-86, mixed mode, sharing)
+```
+
+### **Node.js**
+
+O projeto requer **Node.js** (versão mínima: 18.x). Você pode instalar o Node.js no site oficial: [Node.js Downloads](https://nodejs.org/).
+
+Verifique a instalação:
+```bash
+node -v
+```
+
+### **Expo CLI**
+
+Instale a CLI do Expo globalmente:
+```bash
+npm install -g expo-cli
+```
+
+Verifique a instalação:
+```bash
+expo --version
+```
+
+### **Android Studio e Emulador**
+
+Se você estiver desenvolvendo ou testando no Android, é necessário:
+- Instalar o [Android Studio](https://developer.android.com/studio).
+- Configurar um emulador Android (como Pixel 3a, com API Level 30 ou superior).
+
+Verifique se o `adb` está disponível:
+```bash
+adb --version
+```
+
+### **Xcode e Simulador iOS**
+
+Se você estiver desenvolvendo ou testando no iOS:
+- Instale o [Xcode](https://developer.apple.com/xcode/).
+- Configure um simulador iOS (como iPhone 13 com iOS 15.5 ou superior).
+
+Verifique se o `xcodebuild` está funcionando:
+```bash
+xcodebuild -version
+```
+
+---
+
 ## 🔌 **Extensões Recomendadas para VS Code**
 
 Para facilitar o desenvolvimento e a execução dos testes, recomendamos instalar as seguintes extensões no Visual Studio Code:
