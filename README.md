@@ -101,13 +101,6 @@ java -version
 
 Requer **Node.js** versão 18 ou superior: [Baixe aqui](https://nodejs.org/).
 
-### **Expo CLI**
-
-Instale globalmente:
-```bash
-npm install -g expo-cli
-```
-
 ---
 
 ## 🖥 **Configuração iOS**
