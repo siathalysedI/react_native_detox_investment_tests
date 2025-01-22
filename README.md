@@ -10,7 +10,7 @@ Testes end-to-end verificam o funcionamento completo de um aplicativo, do iníci
 
 - Garantem que todos os fluxos principais estão funcionando corretamente.
 - Identificam problemas em interações entre diferentes camadas do aplicativo (UI, lógica de negócios, APIs).
-- Oferecem confiança no produto final ao validar a experImplementadoiência do usuário.
+- Oferecem confiança no produto final ao validar a experiência do usuário.
 
 ---
 
@@ -19,6 +19,7 @@ Testes end-to-end verificam o funcionamento completo de um aplicativo, do iníci
 1. Demonstrar como configurar o Detox em um aplicativo React Native.
 2. Ensinar práticas de escrita e execução de testes E2E.
 3. Validar fluxos principais do aplicativo, garantindo a experiência do usuário.
+
 ---
 
 ## 🛠 **Ferramentas Utilizadas**
@@ -29,99 +30,61 @@ Testes end-to-end verificam o funcionamento completo de um aplicativo, do iníci
 
 ---
 
-## 📋 **Dependências Necessárias**
-
-Para executar este projeto, é necessário instalar as dependências abaixo:
+## 📋 **Dependências Necessárias (Comum)**
 
 ### **Java 17**
 
-O projeto requer o Java Development Kit (JDK) versão 17. Use o instalador adequado ao seu sistema operacional:
+Instale o Java Development Kit (JDK) versão 17:
 
-- **Windows 64-bit**: [jdk-17.0.2_windows-x64_bin.zip](https://download.java.net/java/GA/jdk17/0d1cfde4252546c6931946de8db48ee2/9/GPL/openjdk-17.0.2_windows-x64_bin.zip)
-- **Mac/AArch64 64-bit**: [jdk-17.0.2_macos-aarch64_bin.tar.gz](https://download.java.net/java/GA/jdk17/0d1cfde4252546c6931946de8db48ee2/9/GPL/openjdk-17.0.2_macos-aarch64_bin.tar.gz)
-- **Mac/x64 64-bit**: [jdk-17.0.2_macos-x64_bin.tar.gz](https://download.java.net/java/GA/jdk17/0d1cfde4252546c6931946de8db48ee2/9/GPL/openjdk-17.0.2_macos-x64_bin.tar.gz)
-- **Linux/AArch64 64-bit**: [jdk-17.0.2_linux-aarch64_bin.tar.gz](https://download.java.net/java/GA/jdk17/0d1cfde4252546c6931946de8db48ee2/9/GPL/openjdk-17.0.2_linux-aarch64_bin.tar.gz)
-- **Linux/x64 64-bit**: [jdk-17.0.2_linux-x64_bin.tar.gz](https://download.java.net/java/GA/jdk17/0d1cfde4252546c6931946de8db48ee2/9/GPL/openjdk-17.0.2_linux-x64_bin.tar.gz)
+- Links de download: [Windows](https://download.java.net/java/GA/jdk17/0d1cfde4252546c6931946de8db48ee2/9/GPL/openjdk-17.0.2_windows-x64_bin.zip), [Mac AArch64](https://download.java.net/java/GA/jdk17/0d1cfde4252546c6931946de8db48ee2/9/GPL/openjdk-17.0.2_macos-aarch64_bin.tar.gz), [Mac x64](https://download.java.net/java/GA/jdk17/0d1cfde4252546c6931946de8db48ee2/9/GPL/openjdk-17.0.2_macos-x64_bin.tar.gz), [Linux AArch64](https://download.java.net/java/GA/jdk17/0d1cfde4252546c6931946de8db48ee2/9/GPL/openjdk-17.0.2_linux-aarch64_bin.tar.gz), [Linux x64](https://download.java.net/java/GA/jdk17/0d1cfde4252546c6931946de8db48ee2/9/GPL/openjdk-17.0.2_linux-x64_bin.tar.gz).
 
-Após instalar o JDK, verifique se a instalação foi bem-sucedida executando:
+Verifique a instalação:
 ```bash
 java -version
-```
-Deve retornar algo como:
-```
-java version "17.0.2" 2022-01-18 LTS
-Java(TM) SE Runtime Environment (build 17.0.2+8-LTS-86)
-Java HotSpot(TM) 64-Bit Server VM (build 17.0.2+8-LTS-86, mixed mode, sharing)
 ```
 
 ### **Node.js**
 
-O projeto requer **Node.js** (versão mínima: 18.x). Você pode instalar o Node.js no site oficial: [Node.js Downloads](https://nodejs.org/).
-
-Verifique a instalação:
-```bash
-node -v
-```
+Requer **Node.js** versão 18 ou superior: [Baixe aqui](https://nodejs.org/).
 
 ### **Expo CLI**
 
-Instale a CLI do Expo globalmente:
+Instale globalmente:
 ```bash
 npm install -g expo-cli
 ```
 
-Verifique a instalação:
-```bash
-expo --version
-```
+---
 
-### **Android Studio e Emulador**
+## 🖥 **Configuração iOS**
 
-Se você estiver desenvolvendo ou testando no Android, é necessário:
-- Instalar o [Android Studio](https://developer.android.com/studio).
-- Configurar um emulador Android (como Pixel 3a, com API Level 30 ou superior).
+### Pré-requisitos
 
-Verifique se o `adb` está disponível:
-```bash
-adb --version
-```
-
-### **Xcode e Simulador iOS**
-
-Se você estiver desenvolvendo ou testando no iOS:
-- Instale o [Xcode](https://developer.apple.com/xcode/).
-- Configure um simulador iOS (como iPhone 13 com iOS 15.5 ou superior).
+1. Instale o **Xcode**: [Baixe aqui](https://developer.apple.com/xcode/).
+2. Configure o simulador no Xcode (recomenda-se o iPhone 13 ou superior com iOS 15.5+).
 
 Verifique se o `xcodebuild` está funcionando:
 ```bash
 xcodebuild -version
 ```
 
-### **Instale o Detox globalmente**
+### Instalando Dependências iOS
+
+1. Instale o Detox:
    ```bash
    npm install -g detox-cli
    ```
+2. Instale o `applesimutils`:
+   ```bash
+   brew tap wix/brew
+   brew install applesimutils
+   ```
 
-### **Configure o ambiente de simulação**
-   - **iOS**: Certifique-se de que o Xcode está instalado.
-   - **Android**: Configure o Android Studio e os emuladores.
+### Configuração Detox para iOS
 
-**Selecione o Java 17 no Android Studio**
-   - Abra o Android Studio.
-   - Acesse as configurações do projeto (File > Project Structure > SDK Location).
-   - Certifique-se de que o **Java 17** está selecionado como versão do JDK.
-
-
-###  **Configurando a execução do Detox para iOS [🛠️ iOS Only]**
-
-Para configurar o tipo de dispositivo no Detox ao executar testes em iOS, é necessário ajustar o arquivo `.detoxrc.js` com o simulador desejado. Isso garante que os testes sejam executados corretamente no simulador compatível com seu ambiente.
-
-Adicione ou ajuste a configuração no arquivo `.detoxrc.js` da seguinte forma:
-
+Edite o arquivo `.detoxrc.js`:
 ```javascript
 module.exports = {
-  testRunner: 'jest',
-  runnerConfig: 'e2e/jest.config.js',
   configurations: {
     "ios.sim.debug": {
       type: "ios.simulator",
@@ -135,45 +98,81 @@ module.exports = {
 };
 ```
 
-### Como Ajustar para Seu Ambiente iOS
-
-Certifique-se de que o simulador `iPhone 15` está disponível em seu Xcode ou troque para um disponível.
-
-Para listar os simuladores disponíveis, execute:
-
+Liste simuladores disponíveis:
 ```bash
 xcrun simctl list devices
 ```
 
-Caso o `iPhone 15` não esteja disponível, substitua o valor de `type` pelo nome de um simulador listado, como `iPhone 14` ou outro disponível.
+---
 
-Salve o arquivo `.detoxrc.js` após realizar as alterações.
+## 🤖 **Configuração Android**
 
-Com esta configuração, os testes serão executados no simulador especificado, garantindo compatibilidade com seu ambiente de desenvolvimento. 🚀
+### Pré-requisitos
+
+1. Instale o **Android Studio**: [Baixe aqui](https://developer.android.com/studio).
+2. Configure um emulador (exemplo: Pixel 3a com API Level 30+).
+
+Verifique se o `adb` está funcionando:
+```bash
+adb --version
+```
+
+### Seleção do Java 17 no Android Studio
+
+1. Abra o Android Studio.
+2. Vá para **File > Project Structure > SDK Location**.
+3. Selecione **Java 17** como versão do JDK.
+
+### Configuração Detox para Android
+
+Edite o arquivo `.detoxrc.js`:
+```javascript
+module.exports = {
+  configurations: {
+    "android.emu.debug": {
+      type: "android.emulator",
+      binaryPath: "android/app/build/outputs/apk/debug/app-debug.apk",
+      build: "cd android && ./gradlew assembleDebug assembleAndroidTest -DtestBuildType=debug && cd ..",
+      device: {
+        avdName: "Pixel_3a_API_30"
+      }
+    }
+  }
+};
+```
 
 ---
 
+## 🚀 **Executando os Testes**
 
-## 🔌 **Extensões Recomendadas para VS Code**
+### Passos Comuns
 
-Para facilitar o desenvolvimento e a execução dos testes, recomendamos instalar as seguintes extensões no Visual Studio Code:
+1. Instale as dependências:
+   ```bash
+   npm install
+   ```
+2. Compile o app:
+   - Para iOS:
+     ```bash
+     detox build -c ios.sim.debug
+     ```
+   - Para Android:
+     ```bash
+     detox build -c android.emu.debug
+     ```
+3. Execute os testes:
+   - Para iOS:
+     ```bash
+     detox test -c ios.sim.debug
+     ```
+   - Para Android:
+     ```bash
+     detox test -c android.emu.debug
+     ```
 
-1. **[Jest](https://marketplace.visualstudio.com/items?itemName=Orta.vscode-jest)**
-   - Monitora e executa os testes em tempo real enquanto você edita o código.
-   - Oferece feedback visual diretamente no editor.
+---
 
-2. **[React Native Tools](https://marketplace.visualstudio.com/items?itemName=msjsdiag.vscode-react-native)**
-   - Auxilia no desenvolvimento e depuração de aplicativos React Native.
-
-### Como Instalar
-1. Abra o VS Code.
-2. Acesse a aba de extensões (Ctrl+Shift+X ou Cmd+Shift+X no Mac).
-3. Pesquise por "Jest" e "React Native Tools".
-4. Clique em "Install" nas extensões listadas.
-
-## 📁 **Estrutura do Projeto**
-
-A estrutura do projeto está organizada para separar os testes E2E do código principal:
+## 📂 **Estrutura do Projeto**
 
 ```
 react_native_detox_investment_tests/
@@ -182,136 +181,18 @@ react_native_detox_investment_tests/
 │   │   └── earning_wallet.test.js
 │   └── jest.config.js
 ├── src/
-│   ├── assets/
-│   │   ├── fonts/
-│   │   └── images/
-│   ├── components/
-│   │   └── InvestmentCard.tsx
-│   ├── constants/
-│   │   └── Colors.ts
-│   └── screens/
-│       ├── EarningScreen/
-│       │   └── index.tsx
-│       ├── WalletScreen/
-│       │   └── index.tsx
 ├── ios/
 ├── android/
 ├── package.json
-├── .detoxrc.js
 └── README.md
 ```
-
-### Pastas principais:
-- **`e2e/`**: Contém os testes E2E e os arquivos de configuração do Detox.
-- **`src/`**: Contém o código principal do aplicativo, incluindo ativos, componentes e telas.
-
----
-
-## 📝 **Sobre a Atividade - Implementando um teste E2e**
-
-### **Earnings and Wallet Screen Test (`earning_wallet.test.js`)**
-
-Este teste cobre o seguinte fluxo:
-
-1. Lança o aplicativo.
-2. Navega até a aba **Earnings**.
-3. Verifica se o investimento **MXRF11** é exibido na tela de Earnings.
-4. Navega até a aba **Wallet**.
-5. Verifica se o investimento **MXRF11** é exibido na tela de Wallet.
-
-Este teste é importante porque garante que os dados exibidos na interface do usuário estão consistentes entre diferentes telas relacionadas ao portfólio financeiro. Ao validar a presença de **MXRF11** em ambas as telas, asseguramos que:
-- O fluxo de navegação entre abas está funcionando corretamente.
-- As informações financeiras exibidas são coerentes e refletem o mesmo estado de dados em toda a aplicação.
-
-Exemplo do teste:
-
-```javascript
-describe('Earnings and Wallet Screen Tests', () => {
-  beforeAll(async () => {
-    // Launch the app before running tests
-    await device.launchApp();
-  });
-
-  it('should display MXRF11 on Earnings screen and in Wallet', async () => {
-    // Step 1: Tap on the Earnings tab
-    await element(by.text('Earnings')).tap();
-
-    // Step 2: Verify MXRF11 investment card is displayed on the Earnings screen
-    expect(element(by.text('MXRF11'))).toBeVisible();
-
-    // Step 3: Tap on the Wallet tab
-    await element(by.text('Wallet')).tap();
-
-    // Step 4: Verify MXRF11 is displayed on the Wallet screen
-    expect(element(by.text('MXRF11'))).toBeVisible();
-  });
-});
-```
-
----
-
-### 🚒 Pré-requisitos
-
-1. Instale o Detox globalmente:
-   ```bash
-   npm install -g detox-cli
-   ```
-
-2. Configure o ambiente de simulação:
-   - **iOS**: Certifique-se de que o Xcode está instalado.
-   - **Android**: Configure o Android Studio e os emuladores.
-
-3. **Selecione o Java 17 no Android Studio**:
-   - Abra o Android Studio.
-   - Acesse as configurações do projeto (File > Project Structure > SDK Location).
-   - Certifique-se de que o **Java 17** está selecionado como versão do JDK.
-
-## 🚀 **Executando os Testes**
-
-### Pré-requisitos
-
-1. Instale o Detox globalmente:
-   ```bash
-   npm install -g detox-cli
-   ```
-
-2. Configure o ambiente de simulação:
-   - **iOS**: Certifique-se de que o Xcode está instalado.
-   - **Android**: Configure o Android Studio e os emuladores.
-
-### Passos para rodar os testes
-
-1. Instale as dependências do projeto:
-   ```bash
-   npm install
-   ```
-
-2. Compile o aplicativo para testes:
-   ```bash
-   detox build -c ios.sim.debug
-   ```
-   ou para Android:
-   ```bash
-   detox build -c android.emu.debug
-   ```
-
-3. Execute os testes:
-   ```bash
-   detox test -c ios.sim.debug
-   ```
-   ou para Android:
-   ```bash
-   detox test -c android.emu.debug
-   ```
 
 ---
 
 ## 📧 **Contato**
 
-Se tiver dúvidas ou sugestões, entre em contato comigo:
 - **Email**: [jackson.96@gmail.com](mailto:jackson.96@gmail.com)
 - **LinkedIn**: [linkedin.com/in/3jacksonsmith](https://linkedin.com/in/3jacksonsmith)
 
----
-
 Divirta-se explorando e testando! 🚀
+

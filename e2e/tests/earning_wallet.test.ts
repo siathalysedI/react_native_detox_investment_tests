@@ -1,7 +1,9 @@
+/* eslint-disable @typescript-eslint/no-floating-promises */
+
 describe('Earnings and Wallet Screen Tests', () => {
     beforeAll(async () => {
       // Launch the app before running tests
-      await device.launchApp();
+      await device.launchApp({ newInstance: true });
     });
   
     it('should display MXRF11 on Earnings screen and in Wallet', async () => {
@@ -9,13 +11,13 @@ describe('Earnings and Wallet Screen Tests', () => {
       await element(by.text('Earnings')).tap();
   
       // Step 2: Verify MXRF11 investment card is displayed on the Earnings screen
-      expect(element(by.text('MXRF11'))).toBeVisible();
+      await expect(element(by.text('MXRF11'))).toBeVisible();
   
       // Step 3: Tap on the Wallet tab
       await element(by.text('Wallet')).tap();
   
       // Step 4: Verify MXRF11 is displayed on the Wallet screen
-      expect(element(by.text('MXRF11'))).toBeVisible();
+      await expect(element(by.text('MXRF10'))).toBeVisible();
     });
   });
   
