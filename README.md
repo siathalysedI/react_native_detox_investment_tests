@@ -10,8 +10,15 @@ Testes end-to-end verificam o funcionamento completo de um aplicativo, do iníci
 
 - Garantem que todos os fluxos principais estão funcionando corretamente.
 - Identificam problemas em interações entre diferentes camadas do aplicativo (UI, lógica de negócios, APIs).
-- Oferecem confiança no produto final ao validar a experiência do usuário.
+- Oferecem confiança no produto final ao validar a experImplementadoiência do usuário.
 
+---
+
+## 🎯 **Objetivos do Projeto**
+
+1. Demonstrar como configurar o Detox em um aplicativo React Native.
+2. Ensinar práticas de escrita e execução de testes E2E.
+3. Validar fluxos principais do aplicativo, garantindo a experiência do usuário.
 ---
 
 ## 🛠 **Ferramentas Utilizadas**
@@ -104,7 +111,48 @@ xcodebuild -version
    - Acesse as configurações do projeto (File > Project Structure > SDK Location).
    - Certifique-se de que o **Java 17** está selecionado como versão do JDK.
 
+
+###  **Configurando a execução do Detox para iOS [🛠️ iOS Only]**
+
+Para configurar o tipo de dispositivo no Detox ao executar testes em iOS, é necessário ajustar o arquivo `.detoxrc.js` com o simulador desejado. Isso garante que os testes sejam executados corretamente no simulador compatível com seu ambiente.
+
+Adicione ou ajuste a configuração no arquivo `.detoxrc.js` da seguinte forma:
+
+```javascript
+module.exports = {
+  testRunner: 'jest',
+  runnerConfig: 'e2e/jest.config.js',
+  configurations: {
+    "ios.sim.debug": {
+      type: "ios.simulator",
+      binaryPath: "ios/build/Build/Products/Debug-iphonesimulator/YourApp.app",
+      build: "xcodebuild -workspace ios/YourApp.xcworkspace -scheme YourApp -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build",
+      device: {
+        type: "iPhone 15"
+      }
+    }
+  }
+};
+```
+
+### Como Ajustar para Seu Ambiente iOS
+
+Certifique-se de que o simulador `iPhone 15` está disponível em seu Xcode ou troque para um disponível.
+
+Para listar os simuladores disponíveis, execute:
+
+```bash
+xcrun simctl list devices
+```
+
+Caso o `iPhone 15` não esteja disponível, substitua o valor de `type` pelo nome de um simulador listado, como `iPhone 14` ou outro disponível.
+
+Salve o arquivo `.detoxrc.js` após realizar as alterações.
+
+Com esta configuração, os testes serão executados no simulador especificado, garantindo compatibilidade com seu ambiente de desenvolvimento. 🚀
+
 ---
+
 
 ## 🔌 **Extensões Recomendadas para VS Code**
 
@@ -122,8 +170,6 @@ Para facilitar o desenvolvimento e a execução dos testes, recomendamos instala
 2. Acesse a aba de extensões (Ctrl+Shift+X ou Cmd+Shift+X no Mac).
 3. Pesquise por "Jest" e "React Native Tools".
 4. Clique em "Install" nas extensões listadas.
-
----
 
 ## 📁 **Estrutura do Projeto**
 
@@ -161,7 +207,7 @@ react_native_detox_investment_tests/
 
 ---
 
-## 📝 **Teste Implementado**
+## 📝 **Sobre a Atividade - Implementando um teste E2e**
 
 ### **Earnings and Wallet Screen Test (`earning_wallet.test.js`)**
 
@@ -257,14 +303,6 @@ describe('Earnings and Wallet Screen Tests', () => {
    ```bash
    detox test -c android.emu.debug
    ```
-
----
-
-## 🎯 **Objetivos do Projeto**
-
-1. Demonstrar como configurar o Detox em um aplicativo React Native.
-2. Ensinar práticas de escrita e execução de testes E2E.
-3. Validar fluxos principais do aplicativo, garantindo a experiência do usuário.
 
 ---
 
