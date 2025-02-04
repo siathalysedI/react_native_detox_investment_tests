@@ -4235,7 +4235,7 @@ detox-copilot@^0.0.23:
   resolved "https://registry.npmjs.org/detox-copilot/-/detox-copilot-0.0.23.tgz"
   integrity sha512-qDSdLwgPUMVawpE0R3agNWd2U69ilTnhf+SodSqqrkmTI0oG67IfkACvwox+K9Slcc8ki6y0Bw6QVBi54MqpaA==
 
-detox@20.27.4:
+detox@^20.27.4:
   version "20.27.4"
   resolved "https://registry.npmjs.org/detox/-/detox-20.27.4.tgz"
   integrity sha512-Z2WlUZ6Wx6P2bsgY/VpvzYZeU2f1O8tgQaociPlZYKUdTpjvL5g5mzcQbjhpJyH7HknC3z1rANfjHHLiPj9qjQ==
