@@ -17,7 +17,7 @@ describe('Earnings and Wallet Screen Tests', () => {
       await element(by.text('Wallet')).tap();
   
       // Step 4: Verify MXRF11 is displayed on the Wallet screen
-      await expect(element(by.text('MXRF10'))).toBeVisible();
+      await expect(element(by.text('MXRF11'))).toBeVisible();
     });
   });
   

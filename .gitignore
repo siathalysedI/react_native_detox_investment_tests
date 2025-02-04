@@ -54,3 +54,13 @@ yarn-error.*
 
 expo-env.d.ts
 # @end expo-cli
+
+
+# Podfile
+ios/Podfile.lock
+
+# package-lock
+package-lock.json
+
+# yarn
+yarn.lock
