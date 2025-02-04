@@ -12,13 +12,13 @@ module.exports = {
   apps: {
     'ios.debug': {
       type: 'ios.app',
-      binaryPath: 'ios/build/Build/Products/Debug-iphonesimulator/MyInvestmentApp.app',
-      build: 'xcodebuild -workspace ios/MyInvestmentApp.xcworkspace -scheme MyInvestmentApp -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build'
+      binaryPath: 'ios/build/Build/Products/Debug-iphonesimulator/MyWebviewPoCTestApp.app',
+      build: 'xcodebuild -workspace ios/MyWebviewPoCTestApp.xcworkspace -scheme MyWebviewPoCTestApp -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build'
     },
     'ios.release': {
       type: 'ios.app',
-      binaryPath: 'ios/build/Build/Products/Release-iphonesimulator/MyInvestmentApp.app',
-      build: 'xcodebuild -workspace ios/MyInvestmentApp.xcworkspace -scheme MyInvestmentApp -configuration Release -sdk iphonesimulator -derivedDataPath ios/build'
+      binaryPath: 'ios/build/Build/Products/Release-iphonesimulator/MyWebviewPoCTestApp.app',
+      build: 'xcodebuild -workspace ios/MyWebviewPoCTestApp.xcworkspace -scheme MyWebviewPoCTestApp -configuration Release -sdk iphonesimulator -derivedDataPath ios/build'
     },
     'android.debug': {
       type: 'android.apk',

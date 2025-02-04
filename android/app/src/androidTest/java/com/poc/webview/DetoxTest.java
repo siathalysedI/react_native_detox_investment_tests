@@ -1,6 +1,6 @@
-package br.com.jacksonsmith.investment;
+package com.poc.webview;
 
-import com.myinvestmentapp.BuildConfig;
+import com.poc.webview.BuildConfig;
 import com.wix.detox.Detox;
 import com.wix.detox.config.DetoxConfig;
 

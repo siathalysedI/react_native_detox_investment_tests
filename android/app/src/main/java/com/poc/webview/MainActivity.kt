@@ -1,4 +1,4 @@
-package br.com.jacksonsmith.investment
+package com.poc.webview
 
 import android.os.Build
 import android.os.Bundle
@@ -7,8 +7,8 @@ import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate
 import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint.fabricEnabled
 import com.facebook.react.defaults.DefaultReactActivityDelegate
-import com.myinvestmentapp.BuildConfig
-import com.myinvestmentapp.R
+import com.poc.webview.BuildConfig
+import com.poc.webview.R
 
 import expo.modules.ReactActivityDelegateWrapper
 

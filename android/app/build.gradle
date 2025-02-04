@@ -109,10 +109,10 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace "com.myinvestmentapp"
+    namespace "com.poc.webview"
 
     defaultConfig {
-        applicationId 'br.com.jacksonsmith.investment'
+        applicationId 'com.poc.webview'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

@@ -163,10 +163,5 @@ A aula é dividida em 3 atividades práticas que devem ser realizadas seguindo o
 
 ---
 
-## 📧 **Contato**
-
-- **Email**: [jackson.96@gmail.com](mailto:jackson.96@gmail.com)
-- **LinkedIn**: [linkedin.com/in/3jacksonsmith](https://linkedin.com/in/3jacksonsmith)
-
 Divirta-se explorando e testando! 🚀
 

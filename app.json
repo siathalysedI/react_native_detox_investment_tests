@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "MyInvestmentApp",
-    "slug": "MyInvestmentApp",
+    "name": "MyWebviewPoCTestApp",
+    "slug": "MyWebviewPoCTestApp",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -14,14 +14,14 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "br.com.jacksonsmith.investment"
+      "bundleIdentifier": "com.poc.webview"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "br.com.jacksonsmith.investment"
+      "package": "com.poc.webview"
     },
     "web": {
       "bundler": "metro",

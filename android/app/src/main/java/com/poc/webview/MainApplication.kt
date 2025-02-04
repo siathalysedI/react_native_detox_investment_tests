@@ -1,4 +1,4 @@
-package br.com.jacksonsmith.investment
+package com.poc.webview
 
 import android.app.Application
 import android.content.res.Configuration
@@ -11,7 +11,7 @@ import com.facebook.react.ReactHost
 import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint.load
 import com.facebook.react.defaults.DefaultReactNativeHost
 import com.facebook.soloader.SoLoader
-import com.myinvestmentapp.BuildConfig
+import com.poc.webview.BuildConfig
 
 import expo.modules.ApplicationLifecycleDispatcher
 import expo.modules.ReactNativeHostWrapper
