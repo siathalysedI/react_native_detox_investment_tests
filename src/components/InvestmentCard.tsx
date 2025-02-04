@@ -23,10 +23,10 @@ const InvestmentCard: React.FC<InvestmentCardProps> = ({
         <Button title={date} color="#F9A825" onPress={() => {}} />
       </View>
       <Button
-        title="Mais detalhes"
+        title="Más detalles"
         onPress={() => {
           const alertTitle = "Hello World";
-          const alertText = "Cliquei no botão";
+          const alertText = "Hice clic en el botón";
           if (Platform.OS === "web") {
             alert(alertText);
           }

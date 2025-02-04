@@ -5,12 +5,12 @@ import { Text, StyleSheet, ScrollView } from 'react-native';
 const EarningScreen: React.FC = () => {
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      <Text style={styles.balance}>R$ 43,62</Text>
+      <Text style={styles.balance}>$ 43.62 MXN</Text>
 
-      <InvestmentCard code="MXRF11" earnings="Earnings: R$ 0.09" amount="R$ 11.52" date="IN 2 DAYS" />
-      <InvestmentCard code="VISC11" earnings="Earnings: R$ 0.80" amount="R$ 10.40" date="IN 2 DAYS" />
-      <InvestmentCard code="RVBI11" earnings="Earnings: R$ 0.75" amount="R$ 18.75" date="IN 3 DAYS" />
-      <InvestmentCard code="CPTS11" earnings="Earnings: R$ 0.07" amount="R$ 2.95" date="IN 5 DAYS" />
+      <InvestmentCard code="MXRF11" earnings="Earnings: $ 0.09 MXN" amount="$ 11.52 MXN" date="IN 2 DAYS" />
+      <InvestmentCard code="VISC11" earnings="Earnings: $ 0.80 MXN" amount="$ 10.40 MXN" date="IN 2 DAYS" />
+      <InvestmentCard code="RVBI11" earnings="Earnings: $ 0.75 MXN" amount="$ 18.75 MXN" date="IN 3 DAYS" />
+      <InvestmentCard code="CPTS11" earnings="Earnings: $ 0.07 MXN" amount="$ 2.95 MXN" date="IN 5 DAYS" />
       <InvestmentCard code="MCHY11" earnings="Earnings: NOT INFORMED" amount="--" date="NOT INFORMED" />
     </ScrollView>
   );
