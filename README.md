@@ -1,167 +1,105 @@
-# **Projeto de Prática de Testes E2E com Detox em React Native**
+# **E2E poc with detox in react native**
 
-Este repositório foi criado para demonstrar como configurar e executar testes end-to-end (E2E) em um aplicativo **React Native** utilizando o **Detox**. Ele inclui um exemplo prático de cenário de teste que cobre um fluxo importante da aplicação, focado em exibir informações de investimentos em diferentes telas. Durante a aula, os alunos deverão corrigir um erro proposital introduzido no teste.
-
----
-
-## 📚 **O que são Testes E2E?**
-
-Testes end-to-end verificam o funcionamento completo de um aplicativo, do início ao fim, simulando o comportamento do usuário. Esses testes:
-
-- Garantem que todos os fluxos principais estão funcionando corretamente.
-- Identificam problemas em interações entre diferentes camadas do aplicativo (UI, lógica de negócios, APIs).
-- Oferecem confiança no produto final ao validar a experiência do usuário.
+This repository was created to demonstrate how to configure and execute end-to-end tests (E2E) in an application **react native** using **detox**. It includes a practical example of test scenario that covers an important flow of the application, focused on displaying investment information on different screens.
 
 ---
 
-## 🎯 **Objetivos do Projeto**
+## **Objectives**
 
-1. Demonstrar como configurar o Detox em um aplicativo React Native.
-2. Ensinar práticas de escrita e execução de testes E2E.
-3. Identificar e corrigir erros introduzidos nos testes, praticando debugging.
-4. Validar fluxos principais do aplicativo, garantindo a experiência do usuário.
-
----
-
-## 🛠 **Ferramentas Utilizadas**
-
-- **React Native**: Framework para desenvolvimento mobile.
-- **Detox**: Framework de testes E2E para aplicativos React Native.
-- **Jest**: Utilizado como executor de testes.
+1. Demonstrate how to configure detox on a React Native application.
+2. Teach writing and execution practices of E2E tests.
+3. Identify and correct errors introduced in the tests, practicing debugging.
+4. Validate main flow flows, ensuring the user experience.
 
 ---
 
-## 📋 **Dependências Necessárias (Comum)**
+## **Tools**
 
-### **Java 17**
-
-Instale o Java Development Kit (JDK) versão 17:
-
-- Links de download: [Windows](https://download.java.net/java/GA/jdk17/0d1cfde4252546c6931946de8db48ee2/9/GPL/openjdk-17.0.2_windows-x64_bin.zip), [Mac AArch64](https://download.java.net/java/GA/jdk17/0d1cfde4252546c6931946de8db48ee2/9/GPL/openjdk-17.0.2_macos-aarch64_bin.tar.gz), [Mac x64](https://download.java.net/java/GA/jdk17/0d1cfde4252546c6931946de8db48ee2/9/GPL/openjdk-17.0.2_macos-x64_bin.tar.gz), [Linux AArch64](https://download.java.net/java/GA/jdk17/0d1cfde4252546c6931946de8db48ee2/9/GPL/openjdk-17.0.2_linux-aarch64_bin.tar.gz), [Linux x64](https://download.java.net/java/GA/jdk17/0d1cfde4252546c6931946de8db48ee2/9/GPL/openjdk-17.0.2_linux-x64_bin.tar.gz).
-
-Verifique a instalação:
-```bash
-java -version
-```
-
-### **Node.js**
-
-Requer **Node.js** versão 18 ou superior: [Baixe aqui](https://nodejs.org/).
+- **React Native**: Framework for Mobile Development.
+- **Detox**: E2E test framework for React Native applications.
+- **Jest**: Used as a test performer.
 
 ---
 
-## 🖥 **Configuração iOS**
+## Instructions to run the project
 
-### Pré-requisitos
+### Tools Used
 
-1. Instale o **Xcode**: [Baixe aqui](https://developer.apple.com/xcode/).
-2. Configure o simulador no Xcode (recomenda-se o iPhone 13 ou superior com iOS 15.5+).
-
-Verifique se o `xcodebuild` está funcionando:
-```bash
-xcodebuild -version
-```
-
-### Instalando Dependências iOS
-
-1. Instale o `applesimutils`:
-   ```bash
-   brew tap wix/brew
-   brew install applesimutils
-   ```
-
----
-
-## 🤖 **Configuração Android**
-
-### Pré-requisitos
-
-1. Instale o **Android Studio**: [Baixe aqui](https://developer.android.com/studio).
-2. Configure um emulador (exemplo: Pixel 3a com API Level 30+).
-
-Verifique se o `adb` está funcionando:
-```bash
-adb --version
-```
-
-### Seleção do Java 17 no Android Studio
-
-1. Abra o Android Studio.
-2. Vá para **File > Project Structure > SDK Location**.
-3. Selecione **Java 17** como versão do JDK.
-
----
-
-## 📂 **Estrutura do Projeto**
-
-```
-react_native_detox_investment_tests/
-├── e2e/
-│   ├── tests/
-│   │   └── earning_wallet.test.js
-│   └── jest.config.js
-├── src/
-├── ios/
-├── android/
-├── package.json
-└── README.md
-```
-
----
+ - Native React: Framework for mobile development.
+ - Detox: E2E testing framework for React Native applications.
+ - Jest: Used as a test runner.
 
 
-## 📝 **Atividades da Aula**
+### Dependencies
 
-A aula é dividida em 3 atividades práticas que devem ser realizadas seguindo os passos abaixo:
+ - Java 17 Temurin
+    Install vía sdkman, configure SDKMAN_DIR and sdkman-init on ~/.zshrc and check installation:
+    `sdk current java`
+    `java -version`
+    `echo $SDKMAN_DIR`
 
-### **Atividade 1: Configuração do Ambiente**
-1. Instale as dependências do projeto:
-   ```bash
-   npm install
-   ```
-2. Compile o app para a plataforma desejada utilizando os comandos customizados:
-   - Para iOS:
-     ```bash
-     npm run detox:build:ios
-     ```
-   - Para Android:
-     ```bash
-     npm run detox:build:android
-     ```
+    <br>
+ - Nvm and node 20.18.2
+    Install npm via nvm via brew, configure NVM_DIR AND nvm loading on ~/.zshrc and check installation:
+    `brew info nvm`
+    `nvm version`
+    `npm -version`
+    `node -version`
+    `echo $NVM_DIR`
 
----
+    <br>
+ - Applesimutils
+    Install via brew and check installation:
+    `brew info applesimutils`
+    `applesimutils -v`
 
-### **Atividade 2: Execução do Teste E2E**
-1. Execute o teste E2E no Detox utilizando os comandos customizados:
-   - Para iOS:
-     ```bash
-     npm run detox:test:ios
-     ```
-   - Para Android:
-     ```bash
-     npm run detox:test:android
-     ```
+    <br>
+ - Adb
+    Install via Android Studio, configure ANDROID_HOME on ~/.zshrc and check installation:
+    `echo $ANDROID_HOME`
+    `$ANDROID_HOME/platform-tools/adb version`
 
-2. Observe que o teste para a aba **Wallet** falha de propósito.
+    <br>
+ - Xcode
+    Install via Appstore and check installation:
+    `xcodebuild -version`
 
----
+    <br>
+ - Cocoapods via gems via rbenv 2.7.8 vía brew and check installation:
+    `brew info rbenv`
+    `rbenv version`
+    `ruby -v`
+    `gem query --local | grep cocoapods`
 
-### **Atividade 3: Debugging e Correção**
-1. Abra o arquivo de teste localizado em `e2e/tests/earning_wallet.test.js`.
-2. Analise o seguinte código com erro:
-   ```javascript
-   it('should display MXRF11 on Earnings screen and in Wallet', async () => {
-     await element(by.text('Earnings')).tap();
-     await expect(element(by.text('MXRF11'))).toBeVisible();
+    <br>
 
-     await element(by.text('Wallet')).tap();
-     await expect(element(by.text('MXRF10'))).toBeVisible();
-   });
-   ```
-3. Corrija o código para que ele valide corretamente a presença de "MXRF11" na aba Wallet.
-4. Reexecute o teste utilizando os comandos customizados para confirmar que o problema foi solucionado.
+### Repository
 
----
+#### Cloning
 
-Divirta-se explorando e testando! 🚀
+Clone the repository
 
+`git@github.com:siathalysedI/react_native_detox_investment_tests.git`
+
+
+#### Dependencies
+
+Install the dependencies for the project
+
+`npm install`
+
+
+#### Building
+
+Build the app for the desired platform 
+
+`npm run detox:build:ios`
+`npm run detox:build:android`
+
+
+#### Build the app for the desired platform 
+
+Run the E2E test in Detox for the desired platform
+
+`npm run detox:test:ios`
+`npm run detox:test:android`
